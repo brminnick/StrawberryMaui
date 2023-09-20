@@ -32,7 +32,7 @@ class ContactsListDataTemplate : DataTemplate
 			new BoxView { Color = Colors.DarkGray }
 				.Row(Row.Divider)
 				.Height(1)
-				.Margin(0,2)
+				.Margin(0, 2)
 		}
 	};
 

@@ -10,7 +10,7 @@ partial class ContactsViewModel : BaseViewModel
 
 	[ObservableProperty]
 	bool _isRefreshing;
-	
+
 	public ContactsViewModel(GraphQLService graphQLService)
 	{
 		_graphQLService = graphQLService;
@@ -38,4 +38,3 @@ partial class ContactsViewModel : BaseViewModel
 		}
 	}
 }
-

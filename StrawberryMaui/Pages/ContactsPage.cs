@@ -10,7 +10,7 @@ class ContactsPage : BasePage<ContactsViewModel>
 
 		Content = new RefreshView
 		{
-			RefreshColor = Colors.Black,
+			RefreshColor = ColorConstants.NavigationBarTextColor,
 			Content = new CollectionView
 			{
 				ItemTemplate = new ContactsListDataTemplate(),

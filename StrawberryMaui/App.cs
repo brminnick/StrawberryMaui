@@ -18,4 +18,3 @@ class App : Microsoft.Maui.Controls.Application
 		MainPage = navigationPage;
 	}
 }
-

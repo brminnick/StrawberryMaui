@@ -7,4 +7,3 @@ namespace StrawberryMaui;
 public class MainActivity : MauiAppCompatActivity
 {
 }
-

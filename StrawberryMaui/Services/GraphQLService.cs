@@ -20,7 +20,7 @@ class GraphQLService(IContactsClient contactsClient)
 				Email = x.Email,
 				BirthDate = Convert.ToDateTime(x.Birthdate),
 				Id = x.Id,
-				Name = x.Name				
+				Name = x.Name
 			};
 
 		}).ToFrozenSet() ?? Array.Empty<Person>().ToFrozenSet();

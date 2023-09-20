@@ -1,6 +1,6 @@
 ﻿namespace StrawberryMaui;
 
-public static class ColorConstants
+static class ColorConstants
 {
 	public static Color NavigationBarTextColor { get; } = Colors.White;
 	public static Color NavigationBarBackgroundColor { get; } = Color.FromArgb("E3553D");
