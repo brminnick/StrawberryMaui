@@ -74,13 +74,28 @@
 	  <None Remove="Views\" />
 	  <None Remove="Constants\" />
 	  <None Remove="Generated\" />
+	  <None Remove="\**" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Pages\" />
 	  <Folder Include="ViewModels\" />
 	  <Folder Include="Views\" />
 	  <Folder Include="Constants\" />
 	  <Folder Include="Generated\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiXaml Remove="\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiCss Remove="\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Remove="\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Remove="\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <SourceRoot Remove="\Users\demo\.nuget\packages\" />
 	</ItemGroup>
   <PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst')) and '$(Configuration)' == 'Debug'">
     <CodesignEntitlements>Platforms/MacCatalyst/Entitlements.Debug.plist</CodesignEntitlements>
