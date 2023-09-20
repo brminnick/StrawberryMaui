@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using StrawberryMaui.GraphQL;
+
 namespace StrawberryMaui;
 
 partial class ContactsViewModel : BaseViewModel
@@ -29,7 +29,7 @@ partial class ContactsViewModel : BaseViewModel
 
 			var contacts = await _graphQLService.GetContacts(token).ConfigureAwait(false);
 
-			foreach (var contact in contacts)
+			foreach (var contact in contacts.OrderBy(x => x.Name))
 				ContactList.Add(contact);
 		}
 		finally
