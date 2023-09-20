@@ -70,6 +70,24 @@
 	<ItemGroup>
 	  <SourceRoot Remove="\Users\demo\.nuget\packages\" />
 	</ItemGroup>
+	<ItemGroup>
+	  <GraphQL Remove="\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiXaml Remove="\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiCss Remove="\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Remove="\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Remove="\**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="\**" />
+	</ItemGroup>
   <PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst')) and '$(Configuration)' == 'Debug'">
     <CodesignEntitlements>Platforms/MacCatalyst/Entitlements.Debug.plist</CodesignEntitlements>
   </PropertyGroup>
