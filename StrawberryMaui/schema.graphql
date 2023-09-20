@@ -1,0 +1,140 @@
+﻿schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+type Query {
+  getPerson(id: ID!): Person
+  listPeople(filter: TablePersonFilterInput limit: Int nextToken: String): PersonConnection
+}
+
+type Person {
+  name: String!
+  birthdate: String
+  email: AWSEmail!
+  id: ID!
+}
+
+"The `AWSEmail` scalar type provided by AWS AppSync, represents an Email address string that complies with [RFC 822](https:\/\/www.ietf.org\/rfc\/rfc822.txt). For example, \"**username@example.com**\" is a valid Email address."
+scalar AWSEmail
+
+type PersonConnection {
+  items: [Person]
+  nextToken: String
+}
+
+input TablePersonFilterInput {
+  name: TableStringFilterInput
+  birthdate: TableStringFilterInput
+  email: TableStringFilterInput
+  id: TableIDFilterInput
+}
+
+input TableStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input TableIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+type Mutation {
+  createPerson(input: CreatePersonInput!): Person
+  updatePerson(input: UpdatePersonInput!): Person
+  deletePerson(input: DeletePersonInput!): Person
+}
+
+input CreatePersonInput {
+  name: String!
+  birthdate: String
+  email: AWSEmail!
+}
+
+input UpdatePersonInput {
+  name: String
+  birthdate: String
+  email: AWSEmail
+  id: ID!
+}
+
+input DeletePersonInput {
+  id: ID!
+}
+
+type Subscription {
+  onCreatePerson(name: String birthdate: String email: AWSEmail id: ID): Person
+  onUpdatePerson(name: String birthdate: String email: AWSEmail id: ID): Person
+  onDeletePerson(name: String birthdate: String email: AWSEmail id: ID): Person
+}
+
+input TableBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input TableFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input TableIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+"Tells the service this field\/object has access authorized by an API key."
+directive @aws_api_key on OBJECT | FIELD_DEFINITION
+
+"Tells the service which mutation triggers this subscription."
+directive @aws_subscribe("List of mutations which will trigger this subscription when they are called." mutations: [String]) on FIELD_DEFINITION
+
+"Tells the service this field\/object has access authorized by an OIDC token."
+directive @aws_oidc on OBJECT | FIELD_DEFINITION
+
+"Tells the service which subscriptions will be published to when this mutation is called. This directive is deprecated use @aws_susbscribe directive instead."
+directive @aws_publish("List of subscriptions which will be published to when this mutation is called." subscriptions: [String]) on FIELD_DEFINITION
+
+"Tells the service this field\/object has access authorized by sigv4 signing."
+directive @aws_iam on OBJECT | FIELD_DEFINITION
+
+"Directs the schema to enforce authorization on a field"
+directive @aws_auth("List of cognito user pool groups which have access on this field" cognito_groups: [String]) on FIELD_DEFINITION
+
+"Tells the service this field\/object has access authorized by a Cognito User Pools token."
+directive @aws_cognito_user_pools("List of cognito user pool groups which have access on this field" cognito_groups: [String]) on OBJECT | FIELD_DEFINITION
+
+"Tells the service this field\/object has access authorized by a Lambda Authorizer."
+directive @aws_lambda on OBJECT | FIELD_DEFINITION

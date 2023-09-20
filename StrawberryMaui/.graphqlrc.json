@@ -1,0 +1,21 @@
+{
+  "schema": "schema.graphql",
+  "documents": "**/*.graphql",
+  "extensions": {
+    "strawberryShake": {
+      "name": "ContactsClient",
+      "namespace": "StrawberryMaui.GraphQL",
+      "url": "https://lmplh3zfpza2xad4squve7d6ku.appsync-api.us-west-1.amazonaws.com/graphql",
+      "records": {
+        "inputs": false,
+        "entities": false
+      },
+      "transportProfiles": [
+        {
+          "default": "Http",
+          "subscription": "WebSocket"
+        }
+      ]
+    }
+  }
+}

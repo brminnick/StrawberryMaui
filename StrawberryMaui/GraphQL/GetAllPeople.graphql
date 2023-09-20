@@ -1,0 +1,13 @@
+query GetAllPeople
+{
+    listPeople
+    {
+        items
+        {
+            birthdate
+            email
+            id
+            name
+        }
+    }
+}
