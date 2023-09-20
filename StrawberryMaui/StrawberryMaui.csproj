@@ -73,14 +73,12 @@
 	  <None Remove="GraphQL\" />
 	  <None Remove="Views\" />
 	  <None Remove="Constants\" />
-	  <None Remove="Generated\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Pages\" />
 	  <Folder Include="ViewModels\" />
 	  <Folder Include="Views\" />
 	  <Folder Include="Constants\" />
-	  <Folder Include="Generated\" />
 	  <Folder Include="GraphQL\" />
 	</ItemGroup>
   <PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst')) and '$(Configuration)' == 'Debug'">
