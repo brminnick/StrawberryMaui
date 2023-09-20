@@ -10,14 +10,14 @@ class ContactsListDataTemplate : DataTemplate
 
 	}
 
-	static Grid CreateDataTemplate() => new Grid
+	static Grid CreateDataTemplate() => new()
 	{
 		RowSpacing = 2,
 
 		RowDefinitions = Rows.Define(
 			(Row.Text, Star),
 			(Row.Detail, Star),
-			(Row.Divider, 11)),
+			(Row.Divider, 5)),
 
 		Children =
 		{
@@ -29,10 +29,10 @@ class ContactsListDataTemplate : DataTemplate
 				.Row(Row.Detail)
 				.Bind(Label.TextProperty, static (Person person) => person.BirthDate, convert: (DateTime? birthdate) => birthdate?.ToString("d MMMM yyyy") ?? "🤷‍♂️"),
 
-			new BoxView
-			{
-				Color = Colors.DarkGray
-			}.Margins(5, 5).Row(Row.Divider)
+			new BoxView { Color = Colors.DarkGray }
+				.Row(Row.Divider)
+				.Height(1)
+				.Margin(0,2)
 		}
 	};
 

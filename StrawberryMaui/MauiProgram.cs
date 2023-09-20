@@ -25,7 +25,6 @@ public static class MauiProgram
 #endif
 
 		builder.Services.AddTransient<App>();
-		builder.Services.AddTransient<AppShell>();
 		builder.Services.AddTransientWithShellRoute<ContactsPage, ContactsViewModel>(nameof(ContactsPage));
 
 		builder.Services.AddSingleton<GraphQLService>();

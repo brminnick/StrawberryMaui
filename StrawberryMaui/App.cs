@@ -1,10 +1,21 @@
-﻿namespace StrawberryMaui;
+﻿using Microsoft.Maui.Controls.PlatformConfiguration;
+using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
 
-class App : Application
+namespace StrawberryMaui;
+
+class App : Microsoft.Maui.Controls.Application
 {
-	public App(AppShell appShell)
+	public App(ContactsPage contactsPage)
 	{
-		MainPage = appShell;
+		var navigationPage = new Microsoft.Maui.Controls.NavigationPage(contactsPage)
+		{
+			BarBackgroundColor = ColorConstants.NavigationBarBackgroundColor,
+			BarTextColor = ColorConstants.NavigationBarTextColor
+		};
+
+		navigationPage.On<iOS>().SetPrefersLargeTitles(true);
+
+		MainPage = navigationPage;
 	}
 }
 
