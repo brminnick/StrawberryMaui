@@ -81,6 +81,7 @@
 	  <Folder Include="Views\" />
 	  <Folder Include="Constants\" />
 	  <Folder Include="Generated\" />
+	  <Folder Include="GraphQL\" />
 	</ItemGroup>
   <PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst')) and '$(Configuration)' == 'Debug'">
     <CodesignEntitlements>Platforms/MacCatalyst/Entitlements.Debug.plist</CodesignEntitlements>
