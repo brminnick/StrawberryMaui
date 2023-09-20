@@ -26,6 +26,7 @@ abstract class BasePage : ContentPage
 			Title = GetType().Name;
 		}
 
+		On<iOS>().SetUseSafeArea(shouldUseSafeArea);
 		On<iOS>().SetModalPresentationStyle(UIModalPresentationStyle.FormSheet);
 	}
 

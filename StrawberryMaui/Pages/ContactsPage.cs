@@ -4,7 +4,7 @@ namespace StrawberryMaui;
 
 class ContactsPage : BasePage<ContactsViewModel>
 {
-	public ContactsPage(ContactsViewModel contactsViewModel) : base(contactsViewModel)
+	public ContactsPage(ContactsViewModel contactsViewModel) : base(contactsViewModel, false)
 	{
 		Title = "Contacts";
 
@@ -19,7 +19,7 @@ class ContactsPage : BasePage<ContactsViewModel>
 			}.Bind(CollectionView.ItemsSourceProperty, static (ContactsViewModel vm) => vm.ContactList, mode: BindingMode.OneWay)
 
 		}.Bind(RefreshView.CommandProperty, static (ContactsViewModel vm) => vm.GetContactsCommand, mode: BindingMode.OneTime)
-			.Bind(RefreshView.IsRefreshingProperty, static (ContactsViewModel vm) => vm.IsRefreshing);
+		 .Bind(RefreshView.IsRefreshingProperty, static (ContactsViewModel vm) => vm.IsRefreshing);
 	}
 
 	protected override void OnAppearing()
