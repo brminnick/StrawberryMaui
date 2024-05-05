@@ -2,6 +2,7 @@
 
 namespace StrawberryMaui;
 
-public abstract partial class BaseViewModel : ObservableObject
+public abstract partial class BaseViewModel(IDispatcher dispatcher) : ObservableObject
 {
+	protected IDispatcher Dispatcher { get; } = dispatcher;
 }

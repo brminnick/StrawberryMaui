@@ -4,17 +4,12 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace StrawberryMaui;
 
-partial class ContactsViewModel : BaseViewModel
+partial class ContactsViewModel(GraphQLService graphQLService, IDispatcher dispatcher) : BaseViewModel(dispatcher)
 {
-	readonly GraphQLService _graphQLService;
+	readonly GraphQLService _graphQLService = graphQLService;
 
 	[ObservableProperty]
 	bool _isRefreshing;
-
-	public ContactsViewModel(GraphQLService graphQLService)
-	{
-		_graphQLService = graphQLService;
-	}
 
 	public ObservableCollection<Person> ContactList { get; } = new();
 
@@ -35,6 +30,30 @@ partial class ContactsViewModel : BaseViewModel
 		finally
 		{
 			IsRefreshing = false;
+		}
+	}
+
+	[RelayCommand]
+	async Task HandleSelectionChanged(CollectionView collectionView, CancellationToken token)
+	{
+#if ANDROID
+		var delay = TimeSpan.FromSeconds(1);
+#else
+		var delay = TimeSpan.FromMilliseconds(100);
+#endif
+
+		try
+		{
+			await Task.Delay(delay, token)
+				.ConfigureAwait(ConfigureAwaitOptions.ForceYielding | ConfigureAwaitOptions.ContinueOnCapturedContext);
+		}
+		catch (TaskCanceledException)
+		{
+			// Do nothing
+		}
+		finally
+		{
+			collectionView.SelectedItem = null;
 		}
 	}
 }

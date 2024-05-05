@@ -6,9 +6,11 @@ namespace StrawberryMaui;
 
 class GraphQLService(IContactsClient contactsClient)
 {
+	readonly IContactsClient _contactsClient = contactsClient;
+	
 	public async Task<FrozenSet<Person>> GetContacts(CancellationToken token)
 	{
-		var response = await contactsClient.GetAllPeople.ExecuteAsync(token).ConfigureAwait(false);
+		var response = await _contactsClient.GetAllPeople.ExecuteAsync(token).ConfigureAwait(false);
 		response.EnsureNoErrors();
 
 		var contactList = response.Data?.ListPeople?.Items?.Where(x => x != null).Select(x =>
