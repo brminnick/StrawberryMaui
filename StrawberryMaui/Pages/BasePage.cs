@@ -4,12 +4,9 @@ using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
 
 namespace StrawberryMaui;
 
-abstract class BasePage<TViewModel> : BasePage where TViewModel : BaseViewModel
+abstract class BasePage<TViewModel>(TViewModel viewModel, bool shouldUseSafeArea = true) : BasePage(viewModel, shouldUseSafeArea)
+	where TViewModel : BaseViewModel
 {
-	protected BasePage(TViewModel viewModel, bool shouldUseSafeArea = true) : base(viewModel, shouldUseSafeArea)
-	{
-	}
-
 	public new TViewModel BindingContext => (TViewModel)base.BindingContext;
 }
 
