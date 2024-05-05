@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project>
-	<PropertyGroup>
-		<LangVersion>preview</LangVersion>
-		<Nullable>enable</Nullable>
-		<WarningsAsErrors>nullable</WarningsAsErrors>
-		<ProduceReferenceAssembly>True</ProduceReferenceAssembly>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
-	</PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>preview</LangVersion>
+    <Nullable>enable</Nullable>
+    <WarningsAsErrors>nullable</WarningsAsErrors>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
+    <MauiPackageVersion>8.0.21</MauiPackageVersion>
+    <NetVersion>net8.0</NetVersion>
+  </PropertyGroup>
 </Project>

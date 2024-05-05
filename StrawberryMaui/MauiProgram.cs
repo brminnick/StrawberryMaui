@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Markup;
+using Microsoft.Extensions.Http.Resilience;
 using Microsoft.Extensions.Logging;
 using Polly;
 
@@ -34,16 +35,25 @@ public static class MauiProgram
 				client =>
 				{
 					client.BaseAddress = new Uri("https://lmplh3zfpza2xad4squve7d6ku.appsync-api.us-west-1.amazonaws.com/graphql");
-					client.DefaultRequestHeaders.Add("x-api-key", "da2-n3gvllxytndzhc6hpgatty4i5y");
+					client.DefaultRequestHeaders.Add("x-api-key", "da2-nbfcafaez5g2ff3x74j3hdo5na");
 				},
 				clientBuilder =>
 				{
-					clientBuilder.AddTransientHttpErrorPolicy(builder => builder.WaitAndRetryAsync(3, SleepDurationProvider));
+					clientBuilder.AddStandardResilienceHandler(options => options.Retry = new MobileHttpRetryStrategyOptions());
 				});
 
 
 		return builder.Build();
-
-		static TimeSpan SleepDurationProvider(int attemptNumber) => TimeSpan.FromSeconds(Math.Pow(2, attemptNumber));
+	}
+	
+	sealed class MobileHttpRetryStrategyOptions : HttpRetryStrategyOptions
+	{
+		public MobileHttpRetryStrategyOptions()
+		{
+			BackoffType = DelayBackoffType.Exponential;
+			MaxRetryAttempts = 3;
+			UseJitter = true;
+			Delay = TimeSpan.FromSeconds(2);
+		}
 	}
 }
