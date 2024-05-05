@@ -16,13 +16,13 @@ class ContactsPage : BasePage<ContactsViewModel>
 				ItemTemplate = new ContactsListDataTemplate(),
 				BackgroundColor = Colors.Transparent,
 				SelectionMode = SelectionMode.Single
-			}.Bind(CollectionView.ItemsSourceProperty, 
-				 getter: static (ContactsViewModel vm) => vm.ContactList, 
+			}.Bind(CollectionView.ItemsSourceProperty,
+				 getter: static (ContactsViewModel vm) => vm.ContactList,
 				 mode: BindingMode.OneWay)
-			 .Bind(CollectionView.SelectionChangedCommandProperty, 
-				 getter: static (ContactsViewModel vm) => vm.HandleSelectionChangedCommand, 
+			 .Bind(CollectionView.SelectionChangedCommandProperty,
+				 getter: static (ContactsViewModel vm) => vm.HandleSelectionChangedCommand,
 				 mode: BindingMode.OneTime)
-			 .Bind(CollectionView.SelectionChangedCommandParameterProperty, 
+			 .Bind(CollectionView.SelectionChangedCommandParameterProperty,
 				 source: RelativeBindingSource.Self)
 
 		}.Bind(RefreshView.CommandProperty, static (ContactsViewModel vm) => vm.GetContactsCommand, mode: BindingMode.OneTime)

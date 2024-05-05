@@ -18,13 +18,13 @@ class ContactsListDataTemplate() : DataTemplate(CreateDataTemplate)
 		{
 			new TextLabel(ColorConstants.TextColor, 16)
 				.Row(Row.Text)
-				.Bind(Label.TextProperty, 
+				.Bind(Label.TextProperty,
 						getter: static (Person person)  => person.Name,
 						mode: BindingMode.OneTime),
 
 			new TextLabel(ColorConstants.DetailColor, 13)
 				.Row(Row.Detail)
-				.Bind(Label.TextProperty, 
+				.Bind(Label.TextProperty,
 						getter: static (Person person) => person.BirthDate,
 						mode: BindingMode.OneTime,
 						convert: birthdate => birthdate?.ToString("d MMMM yyyy") ?? "🤷‍♂️"),
