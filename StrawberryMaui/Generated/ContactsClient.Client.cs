@@ -3,7 +3,7 @@
 
 namespace Microsoft.Extensions.DependencyInjection
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public static partial class ContactsClientServiceCollectionExtensions
     {
         public static global::StrawberryShake.IClientBuilder<global::StrawberryMaui.GraphQL.State.ContactsClientStoreAccessor> AddContactsClient(this global::Microsoft.Extensions.DependencyInjection.IServiceCollection services, global::StrawberryShake.ExecutionStrategy strategy = global::StrawberryShake.ExecutionStrategy.NetworkOnly)
@@ -89,7 +89,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
 namespace StrawberryMaui.GraphQL
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial class GetAllPeopleResult : global::System.IEquatable<GetAllPeopleResult>, IGetAllPeopleResult
     {
         public GetAllPeopleResult(global::StrawberryMaui.GraphQL.IGetAllPeople_ListPeople? listPeople)
@@ -154,7 +154,7 @@ namespace StrawberryMaui.GraphQL
         }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial class GetAllPeople_ListPeople_PersonConnection : global::System.IEquatable<GetAllPeople_ListPeople_PersonConnection>, IGetAllPeople_ListPeople_PersonConnection
     {
         public GetAllPeople_ListPeople_PersonConnection(global::System.Collections.Generic.IReadOnlyList<global::StrawberryMaui.GraphQL.IGetAllPeople_ListPeople_Items?>? items)
@@ -225,7 +225,7 @@ namespace StrawberryMaui.GraphQL
         }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial class GetAllPeople_ListPeople_Items_Person : global::System.IEquatable<GetAllPeople_ListPeople_Items_Person>, IGetAllPeople_ListPeople_Items_Person
     {
         public GetAllPeople_ListPeople_Items_Person(global::System.String? birthdate, global::System.String email, global::System.String id, global::System.String name)
@@ -302,24 +302,24 @@ namespace StrawberryMaui.GraphQL
         }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial interface IGetAllPeopleResult
     {
         public global::StrawberryMaui.GraphQL.IGetAllPeople_ListPeople? ListPeople { get; }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial interface IGetAllPeople_ListPeople
     {
         public global::System.Collections.Generic.IReadOnlyList<global::StrawberryMaui.GraphQL.IGetAllPeople_ListPeople_Items?>? Items { get; }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial interface IGetAllPeople_ListPeople_PersonConnection : IGetAllPeople_ListPeople
     {
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial interface IGetAllPeople_ListPeople_Items
     {
         public global::System.String? Birthdate { get; }
@@ -331,7 +331,7 @@ namespace StrawberryMaui.GraphQL
         public global::System.String Name { get; }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial interface IGetAllPeople_ListPeople_Items_Person : IGetAllPeople_ListPeople_Items
     {
     }
@@ -356,7 +356,7 @@ namespace StrawberryMaui.GraphQL
     /// }
     /// </code>
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial class GetAllPeopleQueryDocument : global::StrawberryShake.IDocument
     {
         private GetAllPeopleQueryDocument()
@@ -397,7 +397,7 @@ namespace StrawberryMaui.GraphQL
     /// }
     /// </code>
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial class GetAllPeopleQuery : global::StrawberryMaui.GraphQL.IGetAllPeopleQuery
     {
         private readonly global::StrawberryShake.IOperationExecutor<IGetAllPeopleResult> _operationExecutor;
@@ -455,7 +455,7 @@ namespace StrawberryMaui.GraphQL
     /// }
     /// </code>
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial interface IGetAllPeopleQuery : global::StrawberryShake.IOperationRequestFactory
     {
         global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetAllPeopleResult>> ExecuteAsync(global::System.Threading.CancellationToken cancellationToken = default);
@@ -465,7 +465,7 @@ namespace StrawberryMaui.GraphQL
     /// <summary>
     /// Represents the ContactsClient GraphQL client
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial class ContactsClient : global::StrawberryMaui.GraphQL.IContactsClient
     {
         private readonly global::StrawberryMaui.GraphQL.IGetAllPeopleQuery _getAllPeople;
@@ -481,7 +481,7 @@ namespace StrawberryMaui.GraphQL
     /// <summary>
     /// Represents the ContactsClient GraphQL client
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial interface IContactsClient
     {
         global::StrawberryMaui.GraphQL.IGetAllPeopleQuery GetAllPeople { get; }
@@ -490,7 +490,7 @@ namespace StrawberryMaui.GraphQL
 
 namespace StrawberryMaui.GraphQL.State
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial class PersonEntity
     {
         public PersonEntity(global::System.String? birthdate = default !, global::System.String email = default !, global::System.String id = default !, global::System.String name = default !)
@@ -510,7 +510,7 @@ namespace StrawberryMaui.GraphQL.State
         public global::System.String Name { get; }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial class GetAllPeopleResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::StrawberryMaui.GraphQL.GetAllPeopleResult>
     {
         private readonly global::StrawberryShake.IEntityStore _entityStore;
@@ -594,7 +594,7 @@ namespace StrawberryMaui.GraphQL.State
         }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial class GetAllPeopleResultInfo : global::StrawberryShake.IOperationResultDataInfo
     {
         private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
@@ -616,7 +616,7 @@ namespace StrawberryMaui.GraphQL.State
         }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial class GetAllPeopleBuilder : global::StrawberryShake.OperationResultBuilder<global::StrawberryMaui.GraphQL.IGetAllPeopleResult>
     {
         private readonly global::StrawberryShake.IEntityStore _entityStore;
@@ -656,6 +656,11 @@ namespace StrawberryMaui.GraphQL.State
                 return null;
             }
 
+            if (obj.Value.ValueKind == System.Text.Json.JsonValueKind.Null)
+            {
+                return null;
+            }
+
             var typename = obj.Value.GetProperty("__typename").GetString();
             if (typename?.Equals("PersonConnection", global::System.StringComparison.Ordinal) ?? false)
             {
@@ -672,6 +677,11 @@ namespace StrawberryMaui.GraphQL.State
                 return null;
             }
 
+            if (obj.Value.ValueKind == System.Text.Json.JsonValueKind.Null)
+            {
+                return null;
+            }
+
             var persons = new global::System.Collections.Generic.List<global::StrawberryShake.EntityId?>();
             foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
             {
@@ -684,6 +694,11 @@ namespace StrawberryMaui.GraphQL.State
         private global::StrawberryShake.EntityId? Update_IGetAllPeople_ListPeople_ItemsEntity(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
         {
             if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            if (obj.Value.ValueKind == System.Text.Json.JsonValueKind.Null)
             {
                 return null;
             }
@@ -714,6 +729,11 @@ namespace StrawberryMaui.GraphQL.State
                 return null;
             }
 
+            if (obj.Value.ValueKind == System.Text.Json.JsonValueKind.Null)
+            {
+                return null;
+            }
+
             return _stringParser.Parse(obj.Value.GetString()!);
         }
 
@@ -724,11 +744,16 @@ namespace StrawberryMaui.GraphQL.State
                 throw new global::System.ArgumentNullException();
             }
 
+            if (obj.Value.ValueKind == System.Text.Json.JsonValueKind.Null)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
             return _aWSEmailParser.Parse(obj.Value.GetString()!);
         }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial class PersonConnectionData
     {
         public PersonConnectionData(global::System.String __typename, global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId?>? items = default !)
@@ -742,7 +767,7 @@ namespace StrawberryMaui.GraphQL.State
         public global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId?>? Items { get; }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial class GetAllPeople_ListPeople_Items_PersonFromPersonEntityMapper : global::StrawberryShake.IEntityMapper<global::StrawberryMaui.GraphQL.State.PersonEntity, GetAllPeople_ListPeople_Items_Person>
     {
         private readonly global::StrawberryShake.IEntityStore _entityStore;
@@ -762,7 +787,7 @@ namespace StrawberryMaui.GraphQL.State
         }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial class ContactsClientEntityIdFactory : global::StrawberryShake.IEntityIdSerializer
     {
         private static readonly global::System.Text.Json.JsonWriterOptions _options = new global::System.Text.Json.JsonWriterOptions()
@@ -802,7 +827,7 @@ namespace StrawberryMaui.GraphQL.State
         }
     }
 
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.5.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "13.9.0.0")]
     public partial class ContactsClientStoreAccessor : global::StrawberryShake.StoreAccessor
     {
         public ContactsClientStoreAccessor(global::StrawberryShake.IOperationStore operationStore, global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer entityIdSerializer, global::System.Collections.Generic.IEnumerable<global::StrawberryShake.IOperationRequestFactory> requestFactories, global::System.Collections.Generic.IEnumerable<global::StrawberryShake.IOperationResultDataFactory> resultDataFactories) : base(operationStore, entityStore, entityIdSerializer, requestFactories, resultDataFactories)
