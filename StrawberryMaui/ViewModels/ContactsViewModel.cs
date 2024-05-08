@@ -18,6 +18,8 @@ partial class ContactsViewModel(GraphQLService graphQLService, IDispatcher dispa
 	{
 		IsRefreshing = true;
 
+		var minimumRefreshTimeTask = Task.Delay(TimeSpan.FromSeconds(2), token);
+
 		try
 		{
 			ContactList.Clear();
@@ -29,6 +31,7 @@ partial class ContactsViewModel(GraphQLService graphQLService, IDispatcher dispa
 		}
 		finally
 		{
+			await minimumRefreshTimeTask.ConfigureAwait(false);
 			IsRefreshing = false;
 		}
 	}
